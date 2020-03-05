@@ -2,7 +2,6 @@
 
 Original post: https://frisco-uplink.com/2020/using-swift-string-literals-to-load-bundle-resources/
 
-How to use string literals to easily load bundle assets
 My [new iOS fiction project](https://twitter.com/_danilo/status/1227650622377414656) relies heavily on text.
 
 That means I want to make it easy to create that content anywhere, and I want it to be frictionless to drop it into the project as needed.
