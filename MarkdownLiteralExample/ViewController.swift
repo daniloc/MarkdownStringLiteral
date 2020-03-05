@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
+    
+    let webview = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let markdown: MarkdownFile = "markdown.md"
+
+        if let html = markdown.htmlRepresentation {
+            webview.loadHTMLString(html, baseURL: nil)
+        }
+
+        self.title = markdown.bundleName
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = webview
     }
 
 
