@@ -100,5 +100,6 @@ if let html = markdown.htmlRepresentation {
 
 self.title = markdown.bundleName
 ```
+![Screen Shot 2020-03-05 at 10 39 58 AM](https://user-images.githubusercontent.com/213358/75999380-1cf13600-5ed0-11ea-82b2-c1f2ff5a19ec.png)
 
 Behind the scenes, lots of stuff is happening to load and parse the file. But when you need Markdown across your project, you need only concern yourself with a filename. If you want to change any part of how this works later on, you have a single struct that’s responsible for all the Markdown behavior in your code.
