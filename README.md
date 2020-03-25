@@ -8,7 +8,7 @@ That means I want to make it easy to create that content anywhere, and I want it
 
 My solution: Markdown files I can load from the bundle using string literals. Look how easy:
 
-```
+```swift
 let markdown: MarkdownFile = "markdown.md"
 ```
 
@@ -19,7 +19,7 @@ String literals
 
 In Swift, you use string literals all the time. Usually to initialize strings.
 
-```
+```swift
 let string: String = "Hello, I am a string."
 ```
 
@@ -28,7 +28,7 @@ But Swift includes a protocol called `ExpressibleByStringLiteral`. Which means i
 Basic example
 -------------
 
-```
+```swift
 struct MarkdownFile: ExpressibleByStringLiteral {
     
     let bundleName: String
@@ -64,7 +64,7 @@ On `init` it goes looking for a bundle resource matching the name it was provide
 
 This is already pretty convenient. Again, to initialize, all you need is:
 
-```
+```swift
 let markdown: MarkdownFile = "markdown.md"
 ```
 
@@ -75,7 +75,7 @@ Adding convenience
 
 The `MarkdownFile` struct can be responsible for converting its contents into a display representation, as well. Let’s add a computed property to parse the Markdown into HTML. I’ll be using [Ink](https://github.com/JohnSundell/Ink) for this, but you could use any project—or convert it into something else, like `NSAttributedString`.
 
-```
+```swift
 var htmlRepresentation: String? {
     if let raw = rawMarkdown {
         return MarkdownParser().html(from: raw)
@@ -90,7 +90,7 @@ Putting it all together
 
 With our output property all set up, we have a small, convenient API for handling Markdown files in any way we want. Here’s how we use it:
 
-```
+```swift
 let markdown: MarkdownFile = "markdown.md"
 
 if let html = markdown.htmlRepresentation {
